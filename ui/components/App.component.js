@@ -1,13 +1,23 @@
-import { getGooglePoints, getPlayerPoints } from "../../core/state-manager.js"
+import { GridComponent } from "./Grid/Grid.component.js"
+import { ResultPanelComponent } from "./ResultPanel/ResultPanel.component.js"
+import { SettingsComponent } from "./Settings/Settings.component.js"
 
 export function AppComponent() {
   const element = document.createElement('div')
 
-  const googlePoints = getGooglePoints()
-  const player1Points = getPlayerPoints(1)
-  const player2Points = getPlayerPoints(2)
+  render(element)
 
-  element.append(`Player1: ${player1Points}, Player2: ${player2Points}, Google: ${googlePoints}`)
+  return {element}
+}
 
-  return element
+async function render(element) {
+  const settingsComponent= SettingsComponent()
+  const resultPanelComponent = ResultPanelComponent()
+  const girdComponent = GridComponent()
+
+  element.append(
+    settingsComponent.element,
+    resultPanelComponent.element,
+    girdComponent.element
+  )
 }
