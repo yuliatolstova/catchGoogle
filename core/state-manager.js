@@ -8,6 +8,15 @@ const _state = {
   points: {
     google: 12,
     players: [10, 11]
+  },
+  positions: {
+    google: {
+      x:1, y:1
+    },
+    players: [
+      {x:2, y:2},
+      {x:3, y:3}
+    ]
   }
 }
 
