@@ -1,9 +1,14 @@
+import { subscribe } from "../core/state-manager.js"
 import { AppComponent } from "./components/App.component.js"
 
 const rootElement = document.getElementById('root')
 
-rootElement.innerHTML = ''
+function renderApp() {
+  rootElement.innerHTML = ''
 
-const appComponent = AppComponent()
+  const appComponent = AppComponent()
 
-rootElement.append(appComponent.element)
+  rootElement.append(appComponent.element)
+}
+
+subscribe(renderApp)
